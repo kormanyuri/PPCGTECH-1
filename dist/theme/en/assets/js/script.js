@@ -93,10 +93,18 @@ $(function() {
 
   $('#cur_lang').text(curLang);
 
-  url = url.replace('/en/', '/zh/');
-  $('#lang_zh').attr('href',url);
-  url = url.replace('/zh/', '/en/');
-  $('#lang_en').attr('href',url);
+  if(~url.indexOf('/zh') || ~url.indexOf('/en') ) {
+    url = url.replace('/en/', '/zh/');
+    $('#lang_zh').attr('href',url);
+    url = url.replace('/zh/', '/en/');
+    $('#lang_en').attr('href',url);
+  } else {
+    var url_zh = url + 'zh/';
+    var url_en = url + 'en/';
+    $('#lang_zh').attr('href',url_zh);
+    $('#lang_en').attr('href',url_en);
+  }
+
 
   $('.lang .nav-submenu .nav-link').click(function(){
     $('.lang .nav-submenu .nav-link.active').removeClass('active');

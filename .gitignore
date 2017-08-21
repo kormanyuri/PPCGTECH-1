@@ -2,3 +2,4 @@ gruntfile.js
 package.json
 node_modules/
 src/
+.gitignore
