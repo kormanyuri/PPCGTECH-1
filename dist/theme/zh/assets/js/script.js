@@ -91,6 +91,12 @@ $(function() {
   var url = location.href;
   var curLang = $('.lang .nav-submenu .nav-link.active').text();
 
+  if (~url.indexOf('/zh')) {
+    curLang = 'English';
+  } else {
+    curLang = '简体中文';
+  }
+
   $('#cur_lang').text(curLang);
 
   if(~url.indexOf('/zh') || ~url.indexOf('/en') ) {
